@@ -5,7 +5,7 @@ The project verifies independent read and write operations through dedicated dri
 
 ## 🔗 EDA Playground
 
-[Run the complete project on EDA Playground](https://edaplayground.com/x/FCMz)
+[Run my complete project on EDA Playground](https://edaplayground.com/x/FCMz)
 
 ##  Project Overview
 A Dual-Port RAM allows memory to be accessed through two independent ports. 
