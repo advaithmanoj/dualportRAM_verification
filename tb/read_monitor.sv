@@ -5,7 +5,8 @@ class read_monitor;
   virtual interf.read_mon vinterface;
   
   //2
-  function new( mailbox #(trxn) mb1, mb2, virtual interf.read_mon vinterface)
+  function new( mailbox #(trxn) mb1, mb2, virtual interf.read_mon vinterface);
+    $display("[INFO]@ %0t:Creating read_monitor",$time);
     	this.mb1 = mb1; //reference_module
     	this.mb2 = mb2; //scoreboard
     	this.vinterface = vinterface;    
