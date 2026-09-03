@@ -7,8 +7,9 @@ class read_driver;
   virtual interf.read_drv vinterface;
   
   //2
-  function new(mailbox #(trxn) mb2,virtual interf.read_drv vinterface)
-    this.t1 = t1;
+  function new(mailbox #(trxn) mb2,virtual interf.read_drv vinterface);
+    $display("[INFO]@ %0t:Creating read_driver",$time);
+    this.mb2 = mb2;
     this.vinterface = vinterface;
   endfunction
   
