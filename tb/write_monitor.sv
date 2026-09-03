@@ -5,26 +5,37 @@ class write_monitor;
   virtual interf.write_mon vinterface;
   
   function new(mailbox #(trxn) mb1,virtual interf.write_mon vinterface);
+    $display("[INFO]@ %0t:Creating write_monitor",$time);
     this.mb1 = mb1;
     this.vinterface = vinterface;
     t1 = new();
   endfunction
   
   task run();
-    
     forever begin
       repeat(2) @(vinterface.w_mon_cb);
-      
-      wait(vinterface.write_mon.write_en);
-      
-      t1.write_addr <= vinterface.write_mon.write_addr;//should i use mon or cb
-      t1.write_data <= vinterface.write_mon.write_data;
-      
+      wait(vinterface.w_mon_cb.write_en);
+      t1.write_addr <= vinterface.w_mon_cb.write_addr;//should i use mon or cb
+      t1.write_data <= vinterface.w_mon_cb.write_data;
       repeat(2) @(vinterface.w_mon_cb);
-      
       mb1.put(t1);
     end
   endtask
+  
+//   task run();
+//   forever begin
+//     repeat(2) @(vinterface.w_mon_cb);
+
+//     wait(vinterface.w_mon_cb.write_en);
+
+//     t1.write_addr <= vinterface.w_mon_cb.write_addr;
+//     t1.write_data <= vinterface.w_mon_cb.write_data;
+
+//     repeat(2) @(vinterface.w_mon_cb);
+
+//     mb1.put(t1);
+//   end
+// endtask
 
 endclass
 
