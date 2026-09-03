@@ -8,6 +8,7 @@ class write_driver;
   
   //2
   function new(mailbox #(trxn) mb1,virtual interf.write_drv vinterface);
+    $display("[INFO]@ %0t:Creating write_driver",$time);
     this.mb1 = mb1;
     this.vinterface = vinterface;  
   endfunction
