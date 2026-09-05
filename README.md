@@ -14,6 +14,6 @@ This project focuses on verifying the read and write functionality of the RAM us
 The verification environment generates transactions, drives them to the DUT, monitors the DUT activity, predicts expected results using a reference model, and compares them against the observed output using a scoreboard.
 
 ### Testbench Architecture
-<img width="800" alt="dualportTB" src="https://github.com/user-attachments/assets/90ecf5db-e43c-41d5-889a-77a6c601f64e" />
+<img width="600" alt="dualportTB" src="https://github.com/user-attachments/assets/90ecf5db-e43c-41d5-889a-77a6c601f64e" />
 
 
